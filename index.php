@@ -62,10 +62,9 @@
     <div class="container">
         <h2>Genera una password sicura</h2>
 
-        <form action="">
+        <form action="./index.php?password-length" method="GET">
             <div>
                 <label for="password_length">Lunghezza password:</label>
-
                 <button type="submit">Invia</button>
             </div>
 
