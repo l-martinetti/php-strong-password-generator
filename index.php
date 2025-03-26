@@ -1,3 +1,20 @@
+<?php
+
+    function get_password() {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $randomString = '';
+
+        if( isset($_GET['password_length']) && is_numeric($_GET['password_length'])){
+
+            for ($i = 0; $i < $_GET['password_length']; $i++) {
+                $index = random_int(0, strlen($characters) - 1);
+                $randomString .= $characters[$index];
+            }
+        }
+
+        return $randomString;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,6 +87,7 @@
 
             <div>
                 <input id="password_length" name="password_length" type="number">
+                <p>la password scelta è: <?php echo get_password() ?></p>
             </div>
 
         </form>
